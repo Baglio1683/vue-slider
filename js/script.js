@@ -68,6 +68,11 @@ createApp({
 
      this.currentImage = index
 
+     }, 
+
+     startAutoplay : function(){
+       
+        setInterval(this.changeImageNext,3000)
      }
 
 }
