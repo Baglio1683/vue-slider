@@ -60,9 +60,15 @@ createApp({
         }
         else{
           this.currentImage = 0 
-        }
+        } 
 
-    }
+    }, 
+
+    // changeImageFromThumbs : function(){
+
+    //  this.currentImage = this.slide
+
+    // }
 
 }
 
