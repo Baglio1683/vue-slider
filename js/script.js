@@ -64,11 +64,11 @@ createApp({
 
     }, 
 
-    // changeImageFromThumbs : function(){
+    changeImageFromThumbs : function(index){
 
-    //  this.currentImage = this.slide
+     this.currentImage = index
 
-    // }
+     }
 
 }
 
