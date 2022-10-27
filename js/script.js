@@ -40,22 +40,18 @@ createApp({
 
         }
 
-    }, 
+    },
 
 
     created(){
-
-        this.autoplay = setInterval(()=> {
-
-         this.changeImageNext }, 3000
-
-        ) 
+        this.startAutoplay()
     }, 
+
 
 
     methods : {
 
-        changeImageFromThumbs : function(currentindex){
+        changeImageFromThumbs(currentindex){
 
             this.currentImage = currentindex; 
 
@@ -63,7 +59,7 @@ createApp({
 
 
     
-    changeImagePrev : function (){
+    changeImagePrev(){
      
         if(this.currentImage > 0){
         this.currentImage--
@@ -74,7 +70,7 @@ createApp({
 
     }, 
 
-    changeImageNext : function(){
+    changeImageNext(){
 
         if(this.currentImage < this.slide.length-1){
            this.currentImage++
@@ -82,27 +78,25 @@ createApp({
         else{
           this.currentImage = 0 
         } 
-
     }, 
 
-   
-    mouseLeave : function(){
-       
-        this.autoplay = setInterval(()=> {
-
-            this.changeImageNext }, 3000
-           ) 
-
-    }, 
+     startAutoplay(){
+        if (this.autoplay === null) {
+            this.autoplay = setInterval(() => {
+              this.changeImageNext();
+            }, 3000);
+    }
+    },
 
     
-    mouseOver : function(){
+    mouseOver(){
         
         clearInterval(this.autoplay); 
+        this.autoplay = null
     }
 }
     
-
+    
 }).mount("#app")
 
 
